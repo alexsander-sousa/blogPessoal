@@ -1,4 +1,5 @@
 package org.generation.blogPessoal.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,21 +11,21 @@ import com.sun.istack.NotNull;
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
-	@Size (min=2,max=100)
+	@Size(min = 2, max = 100)
 	private String nome;
-	
+
 	@NotNull
-	@Size (min=5,max=100)
+	@Size(min = 5, max = 100)
 	private String usuario;
-	
+
 	@NotNull
-	@Size (min=5,max=100)
+	@Size(min = 5, max = 100)
 	private String senha;
 
 	public long getId() {
@@ -58,5 +59,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 }
