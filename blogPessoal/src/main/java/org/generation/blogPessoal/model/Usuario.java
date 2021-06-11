@@ -6,27 +6,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+
+import org.apache.logging.log4j.message.Message;
+
 import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private long id;
 
-	@NotNull
-	@Size(min = 2, max = 100)
-	private String nome;
+	private @NotNull @Size (max = 100) String nome;
 
-	@NotNull
-	@Size(min = 5, max = 100)
-	private String usuario;
+	private @NotNull @Size(min = 5, max = 100) String usuario;
 
-	@NotNull
-	@Size(min = 5, max = 100)
-	private String senha;
+	private @NotNull @Size(min = 5, max = 100) String senha;
+
+	public Usuario() {
+	}
+
+	public Usuario(String nome, String usuario, String senha) {
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
 
 	public long getId() {
 		return id;
