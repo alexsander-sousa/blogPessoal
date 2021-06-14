@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import org.apache.logging.log4j.message.Message;
 
 import com.sun.istack.NotNull;
 
@@ -17,11 +16,17 @@ public class Usuario {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private long id;
 
-	private @NotNull @Size (max = 100) String nome;
+	@NotNull 
+	@Size (max = 100) 
+	private String nome;
 
-	private @NotNull @Size(min = 5, max = 100) String usuario;
+	@NotNull 
+	@Size(min = 5, max = 100) 
+	private String usuario;
 
-	private @NotNull @Size(min = 5, max = 100) String senha;
+	@NotNull 
+	@Size(min = 5, max = 100) 
+	private String senha;
 
 	public Usuario() {
 	}
